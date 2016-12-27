@@ -24,8 +24,32 @@ public class ProductDao {
         product1.setUnitInStock(11);
         product1.setProductManufacturer("Fender");
 
+        Product product2 = new Product();
+
+        product2.setProductName("Record");
+        product2.setProductCategory("Rescord");
+        product2.setProductDescription("This is an awesome mix of 20th century!");
+        product2.setProductPrice(25);
+        product2.setProductCondition("new");
+        product2.setProductStatus("Active");
+        product2.setUnitInStock(51);
+        product2.setProductManufacturer("EMI");
+
+        Product product3 = new Product();
+
+        product3.setProductName("Speaker");
+        product3.setProductCategory("Accessory");
+        product3.setProductDescription("This is a Polk Shelf Speaker!");
+        product3.setProductPrice(355);
+        product3.setProductCondition("new");
+        product3.setProductStatus("Active");
+        product3.setUnitInStock(9);
+        product3.setProductManufacturer("Polk");
+
         productList = new ArrayList<Product>();
         productList.add(product1);
+        productList.add(product2);
+        productList.add(product3);
 
         return productList;
     }
