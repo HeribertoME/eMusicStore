@@ -12,3 +12,5 @@ log/
 target/
 
 out/
+
+src/main/webapp/WEB-INF/lib/
