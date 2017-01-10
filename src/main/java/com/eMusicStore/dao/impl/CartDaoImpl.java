@@ -2,6 +2,7 @@ package com.eMusicStore.dao.impl;
 
 import com.eMusicStore.dao.CartDao;
 import com.eMusicStore.model.Cart;
+import org.springframework.stereotype.Repository;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -9,6 +10,7 @@ import java.util.Map;
 /**
  * Created by heriberto on 10/01/17.
  */
+@Repository
 public class CartDaoImpl implements CartDao {
 
     private Map<String, Cart> listOfCarts;
