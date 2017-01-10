@@ -13,7 +13,8 @@
             </div>
         </section>
 
-        <section class="container">
+        <section class="container" ng-app="cartApp">
+            <div ng-controller = "cartCtrl" ng-init="initCartId('${cartId}')">
             <div>
                 <a class="btn btn-danger pull-left"><span class="glyphicon glyphicon-remove-sign"></span>Clear cart</a>
             </div>
@@ -26,12 +27,13 @@
                     <th>Price</th>
                     <th>Action</th>
                 </tr>
-                <tr>
-                    <td>productName</td>
-                    <td>productPrice</td>
-                    <td>quantity</td>
-                    <td>totalPrice</td>
-                    <td>remove button</td>
+                <tr ng-repeat = "item in cart.cartItems">
+                    <td>{{item.product.productName}}</td>
+                    <td>{{item.product.productPrice}}</td>
+                    <td>{{item.quantity}}</td>
+                    <td>{{item.totalPrice}}</td>
+                    <td><a href="#" class="label label-danger" ng-click="removeFromCart(item.product.productId)">
+                        <span class="glyphicon glyphicon-remove"></span>Remove</a></td>
                 </tr>
                 <tr>
                     <th></th>
@@ -43,6 +45,7 @@
             </table>
 
             <a href="<spring:url value="/productList" />">Continue Shopping</a>
+            </div>
         </section>
     </div>
 </div>
