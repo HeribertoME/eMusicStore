@@ -44,6 +44,7 @@ public class CustomerDaoImpl implements CustomerDao{
         Authorities newAuthority = new Authorities();
         newAuthority.setUsername(customer.getUsername());
         newAuthority.setAuthority("ROLE_USER");
+        session.saveOrUpdate(newUser);
         session.saveOrUpdate(newAuthority);
 
         Cart newCart = new Cart();
@@ -66,5 +67,13 @@ public class CustomerDaoImpl implements CustomerDao{
         List<Customer> customerList = query.list();
 
         return customerList;
+    }
+
+    public Customer getCustomerByUsername(String username) {
+        Session session = sessionFactory.getCurrentSession();
+        Query query = session.createQuery("from Customer where username = ?");
+        query.setString(0, username);
+
+        return (Customer) query.uniqueResult();
     }
 }
