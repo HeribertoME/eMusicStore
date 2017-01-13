@@ -22,6 +22,12 @@
     <!-- Angular JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 
+    <%-- Jquery --%>
+    <script type="application/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+
+    <!-- Data table -->
+    <script type="application/javascript" src="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
+
     <!-- Bootstrap core CSS -->
     <link href="<c:url value="/resources/css/bootstrap.min.css"/>" rel="stylesheet">
 
@@ -30,6 +36,9 @@
 
     <!-- Main CSS -->
     <link href="<c:url value="/resources/css/main.css"/>" rel="stylesheet">
+
+    <!-- Data table CSS -->
+    <link href="https://cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css" rel="stylesheet">
 
 </head>
 <!-- NAVBAR
