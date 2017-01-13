@@ -1,6 +1,8 @@
 package com.eMusicStore.controller.admin;
 
+import com.eMusicStore.model.Customer;
 import com.eMusicStore.model.Product;
+import com.eMusicStore.service.CustomerService;
 import com.eMusicStore.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -20,6 +22,9 @@ public class AdminHome {
     @Autowired
     private ProductService productService;
 
+    @Autowired
+    private CustomerService customerService;
+
     @RequestMapping
     public String adminPage() {
         return "admin";
@@ -36,7 +41,9 @@ public class AdminHome {
     @RequestMapping("/customer")
     public String customerManagement(Model model) {
 
-        //TODO: Add some customer service
+        List<Customer> customerList = customerService.getAllCustomers();
+        model.addAttribute("customerList", customerList);
+
         return "customerManagement";
     }
 }
